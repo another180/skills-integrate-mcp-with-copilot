@@ -8,9 +8,41 @@
   </head>
   <body>
     <header>
+      <div id="auth-controls">
+        <button id="account-button" type="button">👤 Teacher Login</button>
+        <span id="teacher-status" class="hidden"></span>
+        <button id="logout-button" type="button" class="hidden">Log Out</button>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
+
+    <dialog id="login-dialog" aria-labelledby="login-title">
+      <form id="login-form">
+        <h3 id="login-title">Teacher Login</h3>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input id="username" name="username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+        <div id="login-message" role="alert" class="hidden"></div>
+        <div class="dialog-actions">
+          <button id="cancel-login" type="button" class="secondary-button">
+            Cancel
+          </button>
+          <button type="submit">Log In</button>
+        </div>
+      </form>
+    </dialog>
 
     <main>
       <section id="activities-container">
@@ -21,7 +53,7 @@
         </div>
       </section>
 
-      <section id="signup-container">
+      <section id="signup-container" hidden>
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
